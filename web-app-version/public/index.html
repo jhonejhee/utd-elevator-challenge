@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="flex flex-col h-screen">
+    <header class="border-b p-2">
+      <div class="flex flex-row items-center justify-around">
+        <div class="flex flex-col items-center justify-center">
+          <span class="font-bold">FLOOR</span>
+          <span id="stats-floor">0</span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <span class="font-bold">STOPS</span>
+          <span id="stats-stops">0</span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <span class="font-bold">TRAVERSED</span>
+          <span id="stats-traversed">0</span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <span class="font-bold">REQUESTS</span>
+          <span id="stats-requests">0</span>
+        </div>
+      </div>
+    </header>
+    <main class="flex flex-1 overflow-auto">
+      <section class="flex-1 border-r px-4">
+        <div class="flex flex-col" id="floors-grid"></div>
+      </section>
+      <section id="shaft" class="w-48 relative" style="min-height: 832px">
+        <div
+          id="elevator-car"
+          class="absolute left-2 right-2 h-8 border-2 border-blue-500 flex items-center gap-1 px-1"
+          style="top: 800px"
+        >
+          <div id="car-riders" class="flex flex-wrap gap-1 flex-1 overflow-hidden"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="border-t p-2">
+      <div class="flex flex-row gap-2 items-center justify-start">
+        <button
+          id="btn-add"
+          class="border border-green-500 text-green-500 px-3 py-1 rounded-md cursor-pointer hover:bg-green-500/5"
+        >
+          + ADD REQUEST
+        </button>
+        <button
+          id="btn-dispatch"
+          class="border border-yellow-500 text-yellow-500 px-3 py-1 rounded-md cursor-pointer hover:bg-yellow-500/5"
+        >
+          DISPATCH
+        </button>
+        <button
+          id="btn-reset"
+          class="border border-red-500 text-red-500 px-3 py-1 rounded-md cursor-pointer hover:bg-red-500/5"
+        >
+          RESET
+        </button>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
