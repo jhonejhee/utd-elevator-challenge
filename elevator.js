@@ -99,7 +99,7 @@ export default class Elevator {
       this.currentFloor < person.dropOffFloor ? this.moveUp() : this.moveDown();
     }
 
-    if (this.checkReturnToLobby()) {
+    if (this.requests.length === 0 && this.checkReturnToLobby()) {
       this.returnToLobby();
     }
   }
@@ -194,7 +194,7 @@ export default class Elevator {
    * @returns {boolean}
    */
   checkReturnToLobby() {
-    return new Date().getHours() < 12 && this.riders.length === 0 && this.requests.length === 0;
+    return new Date().getHours() < 12 && this.riders.length === 0;
   }
 
   /**
