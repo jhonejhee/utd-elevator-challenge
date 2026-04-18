@@ -176,8 +176,8 @@ export default class Elevator {
   _logStep() {
     this._stepLog.push({
       floor: this.currentFloor,
-      riders: this.riders.map((r) => ({ ...r })),
-      requests: this.requests.map((r) => ({ ...r })),
+      riders: this.riders.map((r) => Object.assign({}, r)),
+      requests: this.requests.map((r) => Object.assign({}, r)),
       stops: this.stops,
       floorsTraversed: this.floorsTraversed,
     });
